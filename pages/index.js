@@ -1,5 +1,9 @@
 function Home (){
-    return <h1>teste</h1>
+    return <div>
+        <h1>Filmes</h1>
+
+        <p>Listagem de filmes aqui:</p>
+    </div>
 }
 
 export default Home;
