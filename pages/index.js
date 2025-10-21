@@ -1,11 +1,25 @@
 import{filmes} from "../data/lista filmes/filmes.js"
 
-function Home (){
-    
-    const estiloImagem ={
+function CardFilme ({filme}){
+
+        const estiloImagem ={
         width: "300px"
     }
 
+    return (
+        <li >
+            <p>Título: {filme.titulo} </p>
+            <p>Ano: {filme.ano}</p>
+            <p>Gênero: {filme.genero}</p>
+            <p>Nota: {filme.nota}</p>
+
+            <img style={estiloImagem} src={filme.poster}/>
+        </li>
+    )
+}
+
+function Home (){
+    
     return <div>
         <h1>Filmes</h1>
 
@@ -13,20 +27,10 @@ function Home (){
             {
                 filmes.map(( filme ) =>{
                     return (
-                        <li key={`card-filme-${ filme.id }`}>
-                            <p>Nome do filme:</p>
-
-                            <p>Título: {filme.titulo} </p>
-                            <p>Ano: {filme.ano}</p>
-                            <p>Gênero: {filme.genero}</p>
-                            <p>Nota: {filme.nota}</p>
-
-                            <img style={estiloImagem} src={filme.poster}/>
-                        </li>
+                        <CardFilme key={`card-filme-${ filme.id }`} filme={filme}/>
                     );
                 })
             }
-
             
         </ul>
     </div>
