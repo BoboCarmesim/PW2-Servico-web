@@ -20,9 +20,9 @@ function Home (){
 
     fetch(urlVamosChamar).then(res => {
         reposta = res
+        console.log(res)
     });
-
-    console.log(reposta)
+   
 
     return <div>
         <h1>Filmes</h1>
